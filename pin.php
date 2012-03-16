@@ -125,27 +125,29 @@ class Pin {
 
 	function show() {
 		global $post;
-		if ($post->ID == 14) {
-			if (is_user_logged_in()) {
-				global $wpdb, $user_ID;
-				$table_name = $wpdb->prefix . $this->table_name;
-				$query = "SELECT * FROM $table_name WHERE user_id = '$user_ID'";
-				$pins = $wpdb->get_results($query);
-				echo '<link rel="stylesheet" type="text/css" media="all" href="http://wordpress.dev/wp-content/plugins/pin/style.css" />';
-				echo '<div class="show_pins clearfix">';
-				foreach ($pins as $p) {
-					extract((array)$p);
-					echo '
-					<div class="img">
-						<img src="' . $url . '" />
-						<br />
-						<a href="' . $url . '" target="_blank">' . $name . '</a>
-						<br />' . 
-						$this->getCategory($category) . '
-					</div>
-					';
+		if ($post_id = get_option('pin_post_id')) {
+			if ($post->ID == $post_id) {
+				if (is_user_logged_in()) {
+					global $wpdb, $user_ID;
+					$table_name = $wpdb->prefix . $this->table_name;
+					$query = "SELECT * FROM $table_name WHERE user_id = '$user_ID'";
+					$pins = $wpdb->get_results($query);
+					echo '<link rel="stylesheet" type="text/css" media="all" href="http://wordpress.dev/wp-content/plugins/pin/style.css" />';
+					echo '<div class="show_pins clearfix">';
+					foreach ($pins as $p) {
+						extract((array)$p);
+						echo '
+						<div class="img">
+							<img src="' . $url . '" />
+							<br />
+							<a href="' . $url . '" target="_blank">' . $name . '</a>
+							<br />' . 
+							$this->getCategory($category) . '
+						</div>
+						';
+					}
+					echo '</div>';
 				}
-				echo '</div>';
 			}
 		}
 	}
