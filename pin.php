@@ -18,6 +18,9 @@ class Pin {
 
 	function __construct() {
 		register_activation_hook(__FILE__, array(&$this, 'install'));
+		add_filter('the_content', array(&$this, 'show'));
+
+		add_action('admin_menu', array(&$this, 'menu'));
 	}
 
 	function debug($array) {
@@ -118,6 +121,78 @@ class Pin {
 		dbDelta($sql);
 
 		add_option('pin_db_version', $this->db_version);
+	}
+
+	function show() {
+		global $post;
+		if ($post->ID == 14) {
+			if (is_user_logged_in()) {
+				global $wpdb, $user_ID;
+				$table_name = $wpdb->prefix . $this->table_name;
+				$query = "SELECT * FROM $table_name WHERE user_id = '$user_ID'";
+				$pins = $wpdb->get_results($query);
+				echo '<link rel="stylesheet" type="text/css" media="all" href="http://wordpress.dev/wp-content/plugins/pin/style.css" />';
+				echo '<div class="show_pins clearfix">';
+				foreach ($pins as $p) {
+					extract((array)$p);
+					echo '
+					<div class="img">
+						<img src="' . $url . '" />
+						<br />
+						<a href="' . $url . '" target="_blank">' . $name . '</a>
+						<br />' . 
+						$this->getCategory($category) . '
+					</div>
+					';
+				}
+				echo '</div>';
+			}
+		}
+	}
+
+	function menu() {
+		add_options_page('Pin', 'Pin', 'manage_options', 'pin', array(&$this, 'options_page'));
+	}
+
+	function options_page() {
+		if (!current_user_can('manage_options'))  {
+			wp_die( __('You do not have sufficient permissions to access this page.') );
+		}
+
+		if (!empty($_POST['post_id'])) {
+			$post_id = $_POST['post_id'];
+
+			update_option('pin_post_id', $post_id);
+		}
+
+		global $wpdb;
+
+		$query = "SELECT id, post_title FROM " . $wpdb->prefix . "posts WHERE post_type = 'page'";
+		$pages = $wpdb->get_results($query);
+
+		$current = get_option('pin_post_id');
+
+		echo '
+		<div class="wrap">
+			<div id="icon-options-general" class="icon32"></div>
+			<h2>' . __('Ajustes', true) . '</h2>
+			<p>' . __('Descripción de los ajustes', true) . '</p>
+			<form action="" method="post">
+				<label for="post_id">' . __('Selecciona la página Pin', true) . '</label>
+				<select name="post_id" id="post_id">';
+					foreach ($pages as $page) {
+						extract((array)$page);
+						if ($current == $id) {
+							echo '<option selected="selected" value="' . $id . '">' . $post_title . '</option>';
+						} else {
+							echo '<option value="' . $id . '">' . $post_title . '</option>';
+						}
+					}
+				echo '</select>
+				<p class="submit"><input type="submit" value="Guardar cambios" class="button-primary" id="submit" name="submit"></p>
+			</form>
+		</div>
+		';
 	}
 
 }

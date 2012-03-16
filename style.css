@@ -112,8 +112,6 @@ div.logo {
  */
 
 .show_pins {
-	border: solid 1px #CCC;
-	padding: 10px;
 }
 
 .show_pins .img {
@@ -121,14 +119,14 @@ div.logo {
 	margin: 3px;
 	padding: 5px;
 	border: solid 1px #999;
-	width: 210px;
-	height: 210px;
+	width: 175px;
+	height: 175px;
 	text-align: center;
 }
 
 .show_pins img {
-	max-width: 200px;
-	max-height: 200px;
+	max-width: 165px;
+	max-height: 165px;
 	padding: 3px;
 	border: solid 1px #CCC;
 }
