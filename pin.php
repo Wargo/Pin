@@ -17,7 +17,6 @@ class Pin {
 	var $db_version = 1.0;
 
 	function __construct() {
-		// Creación de la tabla
 		register_activation_hook(__FILE__, array(&$this, 'install'));
 	}
 
@@ -27,7 +26,23 @@ class Pin {
 		echo '</pre>';
 	}
 
+	function getCategory($category_slug) {
+		$categories = $this->getCategories();
+		$aux = array();
+		foreach($categories as $category) {
+			extract((array)$category);
+			$aux[$slug] = $name;
+		}
+		return $aux[$category_slug];
+	}
+
 	function getCategories() {
+		global $wpdb;
+		$table_name = $wpdb->prefix . $this->table_name;
+		return $wpdb->get_results("SELECT * FROM " . $table_name . "_categories");
+	}
+
+	function defaultCategories() {
 		return array(
 			array(
 				'name' => 'Decoración',
@@ -80,7 +95,7 @@ class Pin {
 				user_id bigint(20) NOT NULL,
 				url varchar(255) NOT NULL,
 				name varchar(255) NOT NULL,
-				category_id mediumint(9) NOT NULL,
+				category varchar(255) NOT NULL,
 				PRIMARY KEY id (id)
 			);
 
@@ -93,7 +108,7 @@ class Pin {
 			);
 		";
 		
-		$categories = $this->getCategories();
+		$categories = $this->defaultCategories();
 		foreach($categories as $category) {
 			$sql .= 'INSERT INTO ' . $table_name . '_categories (name, slug) values (\'' . $category['name'] . '\', \'' . $category['slug'] . '\');';
 		}

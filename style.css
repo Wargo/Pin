@@ -1,7 +1,13 @@
+/*
+ * General
+ *
+ */
+
 body {
 	font-size: 14px;
 	font-family: Arial;
 }
+
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -23,18 +29,23 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
-form {
-	width: 500px;
-	margin: 0 auto;
-	border: solid 1px #CCC;
-}
-
 .right {
 	float: right;
 }
 
 .left {
 	float: left;
+}
+
+/*
+ * Formulario de subir imagen
+ *
+ */
+
+form {
+	width: 500px;
+	margin: 0 auto;
+	border: solid 1px #CCC;
 }
 
 .box {
@@ -80,6 +91,11 @@ div.logo {
 	padding: 10px;
 }
 
+/*
+ * Página que muestra el mensaje de "subido correctamente"
+ *
+ */
+
 .success {
 	width: 500px;
 	margin: 110px auto;
@@ -88,4 +104,31 @@ div.logo {
 	padding: 15px;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+/*
+ * Página que muestra los pins
+ *
+ */
+
+.show_pins {
+	border: solid 1px #CCC;
+	padding: 10px;
+}
+
+.show_pins .img {
+	float: left;
+	margin: 3px;
+	padding: 5px;
+	border: solid 1px #999;
+	width: 210px;
+	height: 210px;
+	text-align: center;
+}
+
+.show_pins img {
+	max-width: 200px;
+	max-height: 200px;
+	padding: 3px;
+	border: solid 1px #CCC;
 }

@@ -28,14 +28,16 @@ if (is_user_logged_in()) {
 					<select id="category" name="category">
 						<?php
 						$categories = $pin->getCategories();
-						foreach ($categories as $key => $value) {
-							echo '<option value="' . $key . '">' . $value['name'] . '</option>';
+						foreach ($categories as $category) {
+							extract((array)$category);
+							echo '<option value="' . $slug. '">' . $name . '</option>';
 						}
 						?>
 					</select>
 				</div>
 			</div>
 			<input name="from" type="hidden" value="<?php echo $_REQUEST['from']; ?>" />
+			<input name="url" type="hidden" value="<?php echo $_REQUEST['image']; ?>" />
 			<input type="submit" value="Guardar" class="right" />
 		</form>
 	</body>

@@ -1,7 +1,9 @@
 if (document.images.length < 1) {
 	alert('No hay imágenes que captar');
 } else {
-	var max_size = 1;
+	var from = 'elembarazo.net'; // Web from user gets this bookmark
+	var max_size = 1; // Max size of images that will be displayed
+
 	f = document.createElement("style");
 	f.type = "text/css";
 	f.media = "screen";
@@ -48,8 +50,7 @@ if (document.images.length < 1) {
 	}
 
 	function go(image) {
-		//alert(image);
-		window.open('http://wordpress.dev/wp-content/plugins/pin/read.php?from=xxx&image=' + image, 'pick_image', 'toolbar,width=600,height=300,left=200,top=200,scrollbars=yes');
+		window.open('http://wordpress.dev/wp-content/plugins/pin/read.php?from=' + from + '&image=' + image, 'pick_image', 'toolbar=no,width=600,height=300,left=200,top=200,scrollbars=yes,resizable=no');
 	}
 
 }
