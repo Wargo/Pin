@@ -4,7 +4,7 @@ Plugin Name: Pin
 Description: Captura imágenes
 Version: 1.0
 Author: Guille
-Author URI: http://artvisual.net
+Author URI: http://www.artvisual.net
 */
 
 error_reporting(E_ALL);
@@ -12,14 +12,17 @@ ini_set('display_errors', 1);
 
 class Pin {
 
-	var $logo = 'http://elembarazo.net/wp-content/themes/embarazada/images/newsletter_banner.jpg';
+	var $logo = '';
 	var $table_name = 'pin';
 	var $db_version = 1.0;
 
 	function __construct() {
 		register_activation_hook(__FILE__, array(&$this, 'install'));
-		add_filter('the_content', array(&$this, 'show'));
-
+		if ($logo = get_option('pin_logo')) {
+			$this->logo = $logo;
+		}
+		add_action('the_content', array(&$this, 'show'));
+		add_action('wp_print_styles', array(&$this, 'pin_style'));
 		add_action('admin_menu', array(&$this, 'menu'));
 	}
 
@@ -123,6 +126,17 @@ class Pin {
 		add_option('pin_db_version', $this->db_version);
 	}
 
+	function pin_style () {
+		global $post;
+		if ($post_id = get_option('pin_post_id')) {
+			if ($post->ID == $post_id) {
+				if (is_user_logged_in()) {
+					wp_enqueue_style('pin_style', '/wp-content/plugins/pin/style.css');
+				}
+			}
+		}
+	}
+
 	function show() {
 		global $post;
 		if ($post_id = get_option('pin_post_id')) {
@@ -132,20 +146,19 @@ class Pin {
 					$table_name = $wpdb->prefix . $this->table_name;
 					$query = "SELECT * FROM $table_name WHERE user_id = '$user_ID'";
 					$pins = $wpdb->get_results($query);
-					echo '<link rel="stylesheet" type="text/css" media="all" href="http://wordpress.dev/wp-content/plugins/pin/style.css" />';
 					echo '<div class="show_pins clearfix">';
-					foreach ($pins as $p) {
-						extract((array)$p);
-						echo '
-						<div class="img">
-							<img src="' . $url . '" />
-							<br />
-							<a href="' . $url . '" target="_blank">' . $name . '</a>
-							<br />' . 
-							$this->getCategory($category) . '
-						</div>
-						';
-					}
+						foreach ($pins as $p) {
+							extract((array)$p);
+							echo '
+							<div class="img">
+								<img src="' . $url . '" />
+								<br />
+								<a href="' . $url . '" target="_blank">' . $name . '</a>
+								<br />' . 
+								$this->getCategory($category) . '
+							</div>
+							';
+						}
 					echo '</div>';
 				}
 			}
@@ -165,6 +178,11 @@ class Pin {
 			$post_id = $_POST['post_id'];
 
 			update_option('pin_post_id', $post_id);
+
+			if (!empty($_FILES['logo'])) {
+				$logo = wp_handle_upload($_FILES['logo']);
+				update_option('pin_logo', $logo['url']);
+			}
 		}
 
 		global $wpdb;
@@ -179,18 +197,27 @@ class Pin {
 			<div id="icon-options-general" class="icon32"></div>
 			<h2>' . __('Ajustes', true) . '</h2>
 			<p>' . __('Descripción de los ajustes', true) . '</p>
-			<form action="" method="post">
-				<label for="post_id">' . __('Selecciona la página Pin', true) . '</label>
-				<select name="post_id" id="post_id">';
-					foreach ($pages as $page) {
-						extract((array)$page);
-						if ($current == $id) {
-							echo '<option selected="selected" value="' . $id . '">' . $post_title . '</option>';
-						} else {
-							echo '<option value="' . $id . '">' . $post_title . '</option>';
+			<form action="" method="post" enctype="multipart/form-data">
+				<div>
+					<label for="logo">' . __('Adjunta un logotipo para los popups', true) . '</label>
+					<input type="file" name="logo" id="logo" />';
+					wp_nonce_field('upload_pin_logo');
+					echo '
+					<input type="hidden" name="action" value="wp_handle_upload" />
+				</div>
+				<div>
+					<label for="post_id">' . __('Selecciona la página Pin', true) . '</label>
+					<select name="post_id" id="post_id">';
+						foreach ($pages as $page) {
+							extract((array)$page);
+							if ($current == $id) {
+								echo '<option selected="selected" value="' . $id . '">' . $post_title . '</option>';
+							} else {
+								echo '<option value="' . $id . '">' . $post_title . '</option>';
+							}
 						}
-					}
-				echo '</select>
+					echo '</select>
+				<div>
 				<p class="submit"><input type="submit" value="Guardar cambios" class="button-primary" id="submit" name="submit"></p>
 			</form>
 		</div>

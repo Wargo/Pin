@@ -90,6 +90,9 @@ div.logo {
 	text-align: center;
 	padding: 10px;
 }
+div.logo img {
+	max-height: 110px;
+}
 
 /*
  * Página que muestra el mensaje de "subido correctamente"
