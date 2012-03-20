@@ -178,7 +178,7 @@ class Pin {
 
 			update_option('pin_post_id', $post_id);
 
-			if (!empty($_FILES['logo'])) {
+			if (!empty($_FILES['logo']['size'])) {
 				$logo = wp_handle_upload($_FILES['logo']);
 				update_option('pin_logo', $logo['url']);
 			}
@@ -195,10 +195,10 @@ class Pin {
 		<div class="wrap">
 			<div id="icon-options-general" class="icon32"></div>
 			<h2>' . __('Ajustes', true) . '</h2>
-			<p>' . __('Descripción de los ajustes', true) . '</p>
+			<p>' . __('Ajustes para el plugin Pin', true) . '</p>
 			<form action="" method="post" enctype="multipart/form-data">
 				<div>
-					<label for="logo">' . __('Adjunta un logotipo para los popups', true) . '</label>
+					<label for="logo">' . __('Adjunta un logotipo para los popup\'s', true) . '</label>
 					<input type="file" name="logo" id="logo" />';
 					if ($img = get_option('pin_logo')) {
 						echo '<br /><img src="' . $img . '" style="max-width: 200px;" />';
