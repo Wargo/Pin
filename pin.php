@@ -201,6 +201,9 @@ class Pin {
 				<div>
 					<label for="logo">' . __('Adjunta un logotipo para los popups', true) . '</label>
 					<input type="file" name="logo" id="logo" />';
+					if ($img = get_option('pin_logo')) {
+						echo '<br /><img src="' . $img . '" style="max-width: 200px;" />';
+					}
 					wp_nonce_field('upload_pin_logo');
 					echo '
 					<input type="hidden" name="action" value="wp_handle_upload" />
