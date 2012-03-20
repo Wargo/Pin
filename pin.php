@@ -17,13 +17,13 @@ class Pin {
 	var $db_version = 1.0;
 
 	function __construct() {
-		register_activation_hook(__FILE__, array(&$this, 'install'));
+		register_activation_hook(__FILE__, array(&$this, 'install')); // instala BBDD sólo se ejecuta cuando se activa el plugin
 		if ($logo = get_option('pin_logo')) {
 			$this->logo = $logo;
 		}
-		add_action('the_content', array(&$this, 'show'));
-		add_action('wp_print_styles', array(&$this, 'pin_style'));
-		add_action('admin_menu', array(&$this, 'menu'));
+		add_action('the_content', array(&$this, 'show')); // Añade al contenido de la página la función show()
+		add_action('wp_print_styles', array(&$this, 'pin_style')); // Carga estilos CSS
+		add_action('admin_menu', array(&$this, 'menu')); // Añade al menú del administrador la función menu()
 	}
 
 	function debug($array) {
@@ -118,7 +118,6 @@ class Pin {
 		foreach($categories as $category) {
 			$sql .= 'INSERT INTO ' . $table_name . '_categories (name, slug) values (\'' . $category['name'] . '\', \'' . $category['slug'] . '\');';
 		}
-
 
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
@@ -228,4 +227,5 @@ class Pin {
 	}
 
 }
+
 $pin = new Pin();
