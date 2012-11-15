@@ -20,7 +20,7 @@
 
 <?php get_footer('foro'); ?>
 
-
+<? /*
 <script type="text/javascript">
 
 	jQuery(document).ready(function($) {
@@ -40,4 +40,5 @@
 	}
 
 </script>
+*/ ?>
 
