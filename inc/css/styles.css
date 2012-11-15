@@ -1,0 +1,817 @@
+/* PIN GENERAL CSS
+--------------------------------------------------------------------------------------- */
+body.pin-plugin{
+	background: url("../img/body.gif") repeat scroll 0 0 #F4F4F4;
+}
+
+@font-face {
+    font-family: 'VagBold';
+    src: url('vag-bold-webfont.eot');
+    src: url('vag-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('vag-bold-webfont.woff') format('woff'),
+         url('vag-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.vagbold{
+	font-family: 'VagBold' !important;
+}
+#web {
+  clear: both;
+  margin: 0 auto;
+  width: 100% !important;
+}
+#top-header #web-map{
+	right: 585px !important;
+}
+#top-bar{
+  clear: both;
+  margin: 0 auto !important;
+  width: 1044px !important;
+}
+#top-bar .bar{
+	width: 625px !important;
+}
+#pin-page-wrapper{
+	clear: both;
+}
+#pin-logo{
+	background: url(../img/sprite.png) no-repeat 0 0;
+	float:left;
+	font-size:23px;
+	height:33px;
+	line-height:33px;
+	margin:3px;
+	text-indent:40px;
+	text-transform:uppercase;
+	color: #87C442;
+	font-family: 'VagBold';
+}
+#pin-template-notices{
+	width: 1044px;
+	margin: 0px auto;
+}
+
+.white_and_shadow{
+	background: #fff; 
+	box-shadow: 0 3px 3px rgba(34,25,25,0.05); 
+	-moz-box-shadow: 0 3px 3px rgba(34,25,25,0.05); 
+	-webkit-box-shadow: 0 3px 3px rgba(34,25,25,0.05);
+}
+
+.white_and_shadow:hover{
+	background: #fff; 
+	box-shadow: 0 3px 3px rgba(34,25,25,0.1); 
+	-moz-box-shadow: 0 3px 3px rgba(34,25,25,0.1); 
+	-webkit-box-shadow: 0 3px 3px rgba(34,25,25,0.1);
+}
+
+/* PIN MAIN NAV
+--------------------------------------------------------------------------------------- */
+#pin-main-menu{
+	clear:  both;
+	display: block;
+	margin: 10px auto;
+	width: 1024px;
+	height: 40px;
+	padding:10px;
+	position: relative;
+}
+#pin-main-nav{
+	float: left;
+	margin: 3px 3px 3px 40px;
+}
+#pin-main-nav li.nav-item{
+	float: left;
+	margin: 0 10px 0 0;
+}
+#pin-main-nav li.nav-item a{
+	background: none repeat scroll 0 0 #F8F8F8;
+	border: 1px solid #EEEEEE;
+	color: #666666;
+	float: left;
+	font-size: 13px;
+ 	padding: 5px 5px 5px 10px;
+}
+#pin-main-nav li.nav-item a:hover{
+	text-decoration: none;
+	border-color: #DDD;
+	background: #f9f9f9;
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0, 0.1);
+          box-shadow: 0px 2px 6px 0px rgba(0,0,0, 0.1);
+
+}
+#pin-main-nav li.nav-item a i{
+	margin: 2px 5px 0 0;
+	opacity: 0.8;
+}
+#pin-main-nav li.nav-item a.active{
+	float: left;
+	background: #87C442;
+	border-color: #75B230;
+	color: #FFF;
+}
+
+#pin-main-nav li.nav-item a:active{
+	outline: none;
+	border-color: #DDD;
+  -webkit-box-shadow: inset 0px 2px 6px 0px rgba(0,0,0, 0.1);
+          box-shadow: inset 0px 2px 6px 0px rgba(0,0,0, 0.1);
+}
+/* PIN CATEGORIES NAV
+--------------------------------------------------------------------------------------- */
+#pin-categories-nav{
+	width: 1044px;
+	margin: 20px auto 0 auto;
+	position: relative;
+	z-index: 1;
+}
+#pin-categories-nav li{
+	float: left;
+	margin: 0 5px -1px 0;
+	display: inline;
+	position: relative;
+}
+
+#pin-categories-nav li a{
+	background: #55A4F2;
+	border: 1px solid #3285D3;
+	color: #FFF;
+	float: left;
+	font-size: 12px;
+	padding: 8px 12px;
+	text-transform: uppercase;
+	border-bottom: none;
+	text-shadow: 1px 1px 0 #4095E5;
+	text-decoration: none;
+	min-height: 21px;
+}
+#pin-categories-nav li a .count,
+.pin-category h3 a .count,
+.pin-category h3 a span{
+	color: #A0D1FF;
+	font-size: 13px;
+	
+}
+#pin-categories-nav li a:hover{
+	border-color: #2266A5;
+	background-color: #4095E5;
+  -webkit-box-shadow: 0px -2px 6px 0px rgba(0,0,0, 0.1);
+          box-shadow: 0px -2px 6px 0px rgba(0,0,0, 0.1);
+}
+#pin-categories-nav li a.active:hover{
+	border-color : #CCC;
+}
+#pin-categories-nav li a:active{
+  -webkit-box-shadow: inset 0px 0px 6px 0px rgba(0,0,0, 0.1);
+          box-shadow: inset 0px 0px 6px 0px rgba(0,0,0, 0.1);
+}
+#pin-categories-nav li a.active{
+	background: #FFF;
+	border-color: #ddd;
+	color: #333;
+	text-shadow: none;
+}
+#pins-wrapper{
+	clear: both;
+	display: block;
+	overflow: hidden;
+	background: #FFF;
+	min-height: 800px;
+	border-top: 1px solid #ddd;
+	padding: 30px 10px 30px 30px;
+	
+}
+#pin-categories-nav .submenu{
+left: -649px;
+position: absolute;
+top: 37px;
+width: 690px;
+display: none;
+}
+#pin-categories-nav .submenu li{
+    float: left;
+    margin: 0;
+    width: 230px;
+}
+#pin-categories-nav .submenu li a{
+    clear: both;
+    display: block;
+    float: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+#pin-categories-nav #more-categories{
+	float:  right;
+}
+#pin-categories-nav #more-categories:hover .submenu{
+	display: block;
+}
+#pin-categories-nav .submenu
+#pins-wrapper .content{
+	clear: both;
+	display: block;
+	margin: 0 auto;
+	
+}
+/* PIN CELL
+--------------------------------------------------------------------------------------- */
+.pin {width: 199px; float: left; margin: 0 15px 15px 0;  padding: 15px 15px 0; font-size: 11px; background-color: #fff; box-shadow: 0 1px 3px rgba(34,25,25,0.3); -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.3); -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.3); position: relative;}
+.pin .holder {position: relative;}
+.pin .pin-actions{ left: 0; padding: 20px; position: absolute; top: 0; width: 180px }
+.pin .pin-actions{
+   opacity: 0;
+   transition: opacity .1s ease-in-out; 
+   -moz-transition: opacity .1s ease-in-out; 
+   -webkit-transition: opacity .1s ease-in-out; 
+   -o-transition:opacity .1s ease-in-out;
+}
+.pin .pin-actions a{
+	margin: 0 3px 3px 0;
+}
+.pin:hover .pin-actions{ opacity: 1}
+.pin .name{ margin: 10px 0; font-size:12px; line-height: 140%;}
+.pin:hover{box-shadow: 0 1px 4px rgba(34,25,25,0.4); -moz-box-shadow: 0 1px 4px rgba(34,25,25,0.4); -webkit-box-shadow: 0 1px 4px rgba(34,25,25,0.4);}
+
+/* Author */
+.pin .author-box { background-color: #F2F0F0; margin: 0 -15px; padding: 10px 15px }
+.pin .author-box .author-avatar{ float: left; margin-right: 8px; width: 30px; padding: 0}
+.pin .author-box .author-avatar img{margin:0; width: 30px; height: 30px}
+.pin .author-box .author-text{ line-height: 140%; display: table-cell; height: 30px; max-width: 154px; vertical-align: middle; margin: 0 0 0 36px; overflow: hidden; word-wrap: break-word;}
+
+/* Metas */ 
+.pin .metas{
+	font-size: 11px;
+	color: #999;
+}
+
+/* BOARD CELL
+--------------------------------------------------------------------------------------- */
+.pin-category {width: 222px !important; padding: 0 !important;margin-bottom: 20px; box-shadow: none; -moz-box-shadow: none;-webkit-box-shadow:none }
+.pin-category h3{
+	font-size: 16px !important;
+	text-align: center;
+	margin: 0;
+	clear: both;
+	display: block;
+	overflow: hidden;
+}
+.pin-category h3 a{
+	background: #55A4F2;
+	border: 1px solid #3285D3;
+	color: #FFF;
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px 15px;
+	text-transform: uppercase;
+	border-bottom: none;
+	text-decoration: none;
+	text-shadow: none;
+	line-height: 120%;
+	text-align: center;
+	clear: both;
+	display: block;
+}
+.pin-category h3 a:hover{
+	border-color: #2266A5;
+  -webkit-box-shadow: 0px -2px 6px 0px rgba(0,0,0, 0.1);
+          box-shadow: 0px -2px 6px 0px rgba(0,0,0, 0.1);
+}
+
+.pin-category h3 a:active{
+  -webkit-box-shadow: inset 0px 0px 6px 0px rgba(0,0,0, 0.1);
+          box-shadow: inset 0px 0px 6px 0px rgba(0,0,0, 0.1);
+}
+.pin-category:hover{box-shadow: none; -moz-box-shadow: none;-webkit-box-shadow:none }
+  .pin-category .board {position: relative; box-shadow: 0 1px 3px rgba(34,25,25,0.3); -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.3); -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.3);}
+  .pin-category .board:hover{box-shadow: 0 1px 4px rgba(34,25,25,0.4); -moz-box-shadow: 0 1px 4px rgba(34,25,25,0.4); -webkit-box-shadow: 0 1px 4px rgba(34,25,25,0.4);}
+  .pin-category .board a.link { zoom: 1; display: block; position: absolute; top: 0; left: 0; width: 222px; z-index:1; height:207px; background-color:#fff; opacity: 0; filter: alpha(opacity=0); }
+  .pin-category .empty { background: #EFEFEF; }
+  .pin-category .cover { height: 150px; width: 100%; display: block; text-align: center; margin-bottom:1px; overflow: hidden; position: relative; position: relative; }
+  .pin-category .cover img {  }
+  .pin-category .thumbs { display: block; width: 224px; height: 55px; background: #F2F0F0; }
+  .pin.pin-category .actions { left: 0; right: 0; top: 115px; text-align: center; }
+  .pin.pin-category .actions a {float: none;}
+  .pin-category .curatedBy {padding: 9px 15px 0; overflow: hidden;}
+    .pin-category .curatedBy img {float: left; width: 18px; height: 18px; margin-right: 4px;}
+    .pin-category .curatedBy p {float: left; width: 170px; margin: 2px 0 0; font-size: 11px; white-space: nowrap; overflow: hidden;}
+    .pin-category .holder { overflow: hidden; width: 222px; background-color: #fff; }
+    .pin-category .holder .thumbs img, .pin-category .holder .thumbs .empty {float: left; width: 55px; height: 55px; margin: 0 1px 0 0;}
+    
+.segoe{ font-family: 'Segoe UI','Proxima Nova','Helvetica Neue','Helvetica',Arial,sans-serif !important;}
+
+.pin-category .board-actions {
+    border-top: 1px solid #CCCCCC;
+    padding: 0;
+    text-align: center;
+}
+.pin-category .board-actions .btn{
+	margin: 0 -1px;
+	width: auto;
+	margin: -1px -1px 0 -1px;
+  -webkit-border-radius: 0 0 5px 5px;
+          border-radius: 0 0 5px 5px;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+.pin-board .board {
+  -webkit-border-radius: 0 0 5px 5px;
+          border-radius: 0 0 5px 5px;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+.pin-board .board-author{ -webkit-border-radius: 0; border-radius: 0; font-size: 12px}
+.pin-board .board-author img.avatar{
+    display: table-cell;
+    float: none;
+    margin: 3px;
+    vertical-align: middle;
+}
+
+.pin-user h4{
+	margin: 10px auto;
+	text-align: center;
+	font-size: 13px;
+}
+.pin-user p{
+	margin: 3px auto;
+	text-align: center;
+	
+}
+.pin-user img.avatar{
+	text-align: center;
+	float: none;
+}
+
+.pin-user h3{
+	margin: 0 0 10px 0;
+}
+
+
+/* SINGLE PIN
+--------------------------------------------------------------------------------------- */
+
+#single-pin{
+	width: 1044px;
+	margin: 0 auto 20px auto;
+	position: relative;
+}
+#singe-pin-side{
+	width: 420px;
+	margin-top: 20px;
+	min-height: 200px;
+	float: right;
+}
+#single-pin .main{
+    float: left;
+    margin-top: 20px;
+    width: 540px;
+	padding: 30px;
+}
+#single-pin .main .referer{ 
+clear: both;
+cursor: pointer;
+display: block;
+margin: 0 auto;
+outline: medium none;
+overflow: hidden;
+position: relative;
+text-align: center;
+}
+#single-pin .main .referer:hover{
+	zoom: 1;	filter: alpha(opacity=90);	opacity: 0.90;
+}
+#single-pin .main .referer .icon-share-alt{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	display: none;
+}
+#single-pin .main .referer:hover .icon-share-alt{
+	display:  block;
+}
+
+#pin-image-holder{
+	overflow: hidden;
+	position: relative;
+    background: #FFF;
+   
+}
+#singe-pin-side .author-box{ padding: 20px; clear:both; display: block; overflow: hidden; zoom: 1;}
+#singe-pin-side .author-box .author-avatar{
+	float: left;
+}
+#singe-pin-side .author-box .author-text {
+	padding: 0 0 0 75px;
+}
+#singe-pin-side .author-box .author-text .author-name{
+	font-weight: bold;
+	display: block;
+	font-size: 16px;
+}
+#singe-pin-side .pin-decription{
+	padding: 0 25px;
+	font-size: 16px;
+	font-family: Georgia;
+}
+#single-pin .pin-actions{
+	padding: 15px 20px;
+	border-top: 1px solid #EEE;
+	border-bottom: 1px solid #EEE;
+	background: #f5f5f5;
+}
+#single-pin .pin-actions .share-button{
+	float: left;
+}
+#single-pin .btn-toolbar{
+	margin: 20px 0;
+}
+
+
+/* COMMENTS
+--------------------------------------------------------------------------------------- */
+
+#pin-comments {margin-bottom: 5px;}
+#pin-comments p {line-height: 1.33em;}
+#pin-comments .comment {clear: both; padding: 5px 25px; overflow: hidden;}
+#pin-comments .comment p { display: block; font-size: 13px; margin: 0 10px 10px 70px; word-wrap: break-word;}
+#pin-comments .comment img {display: block; width: 50px;}
+#pin-comments .CommenterMeta {color: #211922;}
+#pin-comments .comment ul {margin: 0 0 4px 58px;}
+#pin-comments .comment li {display:inline; margin-right: 3px;}
+#pin-comments .comment li img {display: inline; width: 5px;}
+#pin-comments .avatar {float: left; margin: 0 8px 0 0}
+#pin-comments .avatar img {width: 50px; height: 50px;}
+#pin-comments .au {text-decoration: none;}
+
+#comment-pin-form {padding:25px; border: none; width: auto;}
+#comment-pin-form .avatar {float: left; width: 50px; margin: 0}
+#comment-pin-form .input {margin-left: 58px; position: relative;}
+#comment-pin-form #comment-content {width: 294px; height: 32px; padding: 8px; font-size: 13px;}
+#comment-pin-form .controls {overflow: hidden;}
+#comment-pin-form .controls .btn {float: right; margin-top: 8px;}
+#pin-comments .delete-comment{
+color: #AAA;
+font-size: 10px;
+font-weight: bold;
+line-height: 140%;
+padding: 3px 8px;
+}
+#pin-comments .delete-comment:hover{
+	background:#EE4236;
+	color: #FFF; 
+	text-decoration: none;
+}
+.floatRight { float: right !important;}
+.floatLeft { float: left !important;}
+
+/* EDIT SINGLE PIN
+--------------------------------------------------------------------------------------- */
+
+#single-pin.edit{ padding: 35px 35px;width: 964px}
+#single-pin.edit .img_holder{
+	float: left;
+	margin: 0 40px 0 0;
+}
+#single-pin.edit .form_holder{
+    float: left;
+    min-height: 265px;
+    width: 720px;
+}
+#single-pin.edit .form_holder .form-actions{
+	background: none;
+	border: none;
+}
+#single-pin.edit .form_holder .delete-pin{
+	margin: 11px 0 0 0;
+}
+
+
+/* USER PAGE
+--------------------------------------------------------------------------------------- */
+/* User navigation */
+
+#pin-user-nav{
+	margin-bottom: 10px;
+}
+#pin-user-nav .user-avatar{
+	margin:0;
+	float: left;
+}
+#pin-user-nav .navbar-inner{
+	padding: 0 10px;
+	clear: both;
+	display: block;
+	overflow: hidden;
+}
+#pin-user-nav .brand{
+	padding: 9px 25px;
+	color: #508CC9;
+	font-size: 18px;
+	margin: 0 0 0 -20px;
+}
+#pin-user-nav img.avatar{
+	margin: 5px 0 !important;
+	width: 30px;
+	height: 30px;
+}
+#pin-user-nav .nav-inner{
+	clear: both;
+	display: block;
+}
+.form-horizontal label.control-label{
+	margin: 0;
+}
+#pin-board-form select,#pin-board-form textarea, #pin-board-form input{
+	width: 330px;
+}
+#pin-board-form .help-inline{
+	clear: both;
+	display: none;
+}
+.board-head{
+    border-bottom: 1px solid #EEEEEE;
+    clear: both;
+    display: block;
+    padding: 0 10px 5px;
+    text-align: center;
+}
+.board-head h1{
+color: #555555;
+font-size: 26px;
+font-weight: normal;
+line-height: 160%;
+margin: 0;
+padding: 6px 0 0;
+text-align: center;
+}
+.board-head p{
+	margin: 0;
+}
+.board-head .btn{
+	margin: 0 5px;
+}
+#BoardMeta {
+    overflow: hidden;
+    padding: 10px 0 12px;
+    position: relative;
+    border-top: 1px solid #FFF;
+}
+#BoardMeta #BoardStats {
+    font-size: 13px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 20px;
+    width: 200px;
+}
+#BoardButton {
+left: 50%;
+margin-left: -90px;
+position: absolute;
+top: 5px;
+width: 180px;
+}
+#BoardButton .btn{
+	margin: 0;
+}
+#BoardUsers .user-name{
+	margin: 5px 0 0 5px;
+	float: left;
+}
+
+#pin-user-nav.single-pin .board-head {
+	float: left;
+	clear: none;
+	border: none;
+	border-left: 1px solid #EEEEEE;
+	font-size: 21px;
+}
+#pin-user-nav.single-pin .board-head .pins-count{
+	font-size: 13px;
+}
+#pin-user-nav.single-pin .board-head p{
+	margin: 10px 0 0 10px;
+}
+#pin-user-nav.single-pin #BoardMeta {
+	float: left;
+	border-right: 1px solid #FFF;
+	padding: 0;
+}
+#pin-user-nav .btn {
+    float: right;
+    margin: 5px -4px;
+}
+
+/* BOARD PICKER
+--------------------------------------------------------------------------------------- */
+.BoardListOverlay {display: none; position: fixed; z-index: 9998; top: 0; right: 0; bottom: 0; left: 0;}
+.BoardPicker label{display: none;}
+.BoardPicker {position: relative; display: block; margin-bottom: 18px; padding: 3px 18px 3px 10px; background: #FFF; cursor: pointer; border: 1px solid #ad9c9c; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; box-shadow: inset 0 1px 1px rgba(34,25,25,0.1), 0 1px #fff; -moz-box-shadow: inset 0 1px 1px rgba(34,25,25,0.1), 0 1px #fff; -webkit-box-shadow: inset 0 1px 1px rgba(34,25,25,0.1), 0 1px #fff; height: 22px; display: block; width:376px;}
+
+.BoardPicker:hover {background-color: #ebe8e8; background: -moz-linear-gradient(#f9f6f6, #ebe8e8); background: -o-linear-gradient(#f9f6f6, #ebe8e8); background: -webkit-linear-gradient(#f9f6f6, #ebe8e8); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f6f6', endColorstr='#ebe8e8'); border-color: #8c7e7e;}
+
+.BoardPicker:active {border-color: #524d4d; box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 2px 2px white; -moz-box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 2px 2px white; -webkit-box-shadow: inset 0 1px 1px rgba(34,25,25,0.5), 0 2px 2px white; color: #333;}
+.BoardPicker .current{display: block;height: 22px;width: 280px;}
+.BoardPicker .CurrentBoard {display: block; white-space: nowrap; overflow: hidden;}
+.BoardPicker:active .CurrentBoard {color: #fff;}
+.BoardPicker .CurrentBoard, .BoardPicker .CurrentCategory {
+height: 22px;
+line-height: 22px;
+overflow: hidden;
+white-space: nowrap;
+width: 390px;}
+.BoardPicker:active .CurrentBoard,
+.BoardPicker:active .CurrentCategory {color: #111; text-shadow: none;}
+.BoardPicker .DownArrow {    height: 12px; position: absolute; right: 10px; top: 7px; width: 13px; }
+.BoardList {display: none; position: absolute; z-index: 9999; top: -1px; left: -1px; width: 405px; background-color: #fff; border: 1px solid #ccc; box-shadow: 0 0 17px #bbb; -moz-box-shadow: 0 0 17px #bbb; -webkit-box-shadow: 0 0 17px #bbb; -webkit-border-radius: 3px;border-radius: 3px;-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; overflow: hidden;}
+.BoardList .wrapper { max-height: 200px; overflow-x: hidden; overflow-y: auto; }
+.BoardList ul{ margin:0; padding: 0;}
+.BoardList li {position: relative; display: block; margin: 0; padding: 5px 46px 5px 8px; list-style: none; line-height: 1.15em; color: #524d4d; cursor: pointer;}
+.BoardList li:hover {color: #fff; background-color: rgba(82, 168, 236, 0.8);}
+.BoardList li:active {color: #fff; background-color: #ccc; text-shadow: none;}
+.BoardList li .CollaborativeBoard {position: absolute; top: 50%; right: 10px; width: 28px; height: 13px; margin-top: -6px; background: url(../images/CollaborativeBoardIcon.png) top center no-repeat;}
+.BoardList li:active .CollaborativeBoard {background-position: bottom center;}
+.BoardPicker .CreateBoard,
+.BoardPicker .CreateCategory {padding: 8px; background-color: #f2f0f0; border-top: 1px solid #cccaca;cursor: default;}
+.BoardPicker .CreateBoard input,
+.BoardPicker .CreateCategory input {margin: 0 6px 0 0;}
+.BoardPicker .CreateBoard .Button,
+.BoardPicker .CreateCategory .Button { margin-right: -10px; }
+.BoardPicker .CreateBoardStatus {display: none; text-align: right; padding: 2px; font-size: .8em;}
+.BoardPicker .CreateBoardStatus.error {color: #f00;}
+.BoardPicker .CreateBoardStatus.good {color: green;}
+.BoardPicker.NoBoards {background: none; border: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; margin: 0; padding: 0;}
+.BoardPicker.NoBoards .BoardList {background: none; border: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; display: block; position: relative;}
+.BoardPicker.NoBoards .CreateBoard {background: none; border: 0; margin-bottom: 17px; padding: 0;}
+.BoardPicker.NoBoards .CreateBoard input {background-color: #fff; color:#000; padding: 6px 12px; width: 73%;}
+.BoardPicker.NoBoards .CreateBoard input.DefaultBoardName {color: #8c7e7e;}
+.StaticRepinForm .BoardPicker.NoBoards .CreateBoard input {width: 250px;}
+.BoardPicker.NoBoards .CreateBoardStatus {display:block; font-size: .6em; padding: 0; position: absolute; right: 0; bottom: 0;}
+.PinForm .CharacterCount {display: inline-block; margin: 9px 0 0 13px; font-size: 18px; font-weight: 300; text-shadow: 0 1px #fff;}
+.error .BoardPicker{ border-color: #B94A48}
+#new-board-name{ width: 175px;}
+.error p.hide{
+	display: block;
+	color: #B94A48;
+	font-weight: bold;
+	margin: 0;
+}
+/* MISCELLANEOUS
+--------------------------------------------------------------------------------------- */
+/* Infinite Scroll loader */
+#infscr-loading { 
+  text-align: center;
+  z-index: 100;
+  position: fixed;
+  left: 45%;
+  bottom: 40px;
+  width: 200px;
+  padding: 10px;
+  background: #000; 
+  opacity: 0.8;
+  color: #FFF;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+.icon-pin{
+    background: url("../img/sprite.png") no-repeat scroll 0 -34px transparent;
+    height: 17px;
+    width: 20px;
+}
+.pin_fixed_width{
+	width: 1044px;
+	margin: 0 auto;
+}
+.form-horizontal select,
+.form-horizontal input[type="text"],
+.form-horizontal textarea{
+	width: 80%;
+}
+.tooltip{
+	line-height: 130%;
+}
+
+.navbar .nav .new-board{
+	font-weight: bold;
+	color: #87C442;
+}
+#pin-page-wrapper .archive-title{
+    font-size: 33px;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 0 0 10px;
+    text-align: left;
+    width: 1044px;
+    text-shadow: 1px 1px 0 #FFF;
+    padding: 5px 0 15px 0;
+}
+#single-pin .pin-actions a{
+	float: left;
+	margin: 0 2px 0 0;
+}
+
+#single-pin .pin-actions  i{
+	float: left;
+}
+.bookmarklet{
+	cursor: move;
+}
+
+
+#boton-quebonito{
+	font-size: 13px;
+}
+
+.popover{
+	width: 300px !important;
+}
+#info-popover{
+  -webkit-border-radius: 16px;border-radius: 16px;-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+height: 14px;
+left: 215px;
+padding: 1px;
+position: absolute;
+top: 15px;
+width: 14px;
+	
+}
+#info-popover i{
+	margin: 0;
+}
+
+.popover-title{
+	font-weight: bold !important;
+}
+/* CONCURSO
+--------------------------------------------------------------------------------------- */
+
+#concurso{
+	width: 1044px;
+	margin: 15px auto;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+#concurso-pin{
+	float: left;
+}
+#concurso .close{
+	position: absolute;
+	top: 35px;
+	right: 35px;
+	font-size: 40px;
+}
+#concurso .content{
+	clear: both;
+	display: block;
+	margin: 0 80px;
+}
+
+#concurso .content .btn {
+	font-size: 28px;
+	margin: 100px 0 0;
+	padding: 20px 32px 16px 18px;
+}
+#concurso .content .info{
+	margin: 50px 0;
+	float: left;
+	text-align: center;
+	width: 330px;
+	height: 600px;
+	position: relative;
+}
+#concurso .content .info .bases{
+	position: absolute;
+	bottom: 0;
+	font-size: 18px;
+	width: 100%;
+}
+#concurso .content .info .bases a{
+	color: #555;
+}
+#concurso .content .info h1{
+	font-size: 46px;
+	margin: 20px 0 30px 0;
+	text-align: center;
+	color: #87C442;
+}
+#concurso .content .btn .icon-pin{
+	background: url("../img/sprite.png") no-repeat scroll 0 0 transparent;
+    height: 33px;
+    width: 33px;
+}
+#concurso-loader {
+    background: none repeat scroll 0 0 #000000;
+    border-radius: 10px 10px 10px 10px;
+    top: 200px;
+    color: #FFFFFF;
+    left: 45%;
+    opacity: 0.8;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    width: 200px;
+    z-index: 100;
+}
